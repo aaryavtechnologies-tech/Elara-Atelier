@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lookbook &amp; Gallery | Elara Atelier Unisex Salon Mumbai</title>
+  <meta name="description" content="Browse our luxury hair, bridal makeup, balayage, nail art, and grooming lookbook at Elara Atelier in Vile Parle East, Mumbai.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* Lightbox Modal Specifics */
+    .lightbox-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(8, 9, 11, 0.94);
+      backdrop-filter: blur(10px);
+      z-index: 3000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .lightbox-modal.show {
+      display: flex;
+    }
+    .lightbox-container {
+      max-width: 800px;
+      width: 100%;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      position: relative;
+      box-shadow: var(--shadow-lg);
+    }
+    .lightbox-img {
+      width: 100%;
+      max-height: 520px;
+      object-fit: cover;
+      display: block;
+    }
+    .lightbox-meta {
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--bg-card);
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.7);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: var(--transition);
+      z-index: 10;
+    }
+    .lightbox-close:hover {
+      background: var(--gold-primary);
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="site-header">
+    <div class="container navbar-inner">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-logo-icon">
+          <i class="fa-solid fa-scissors"></i>
+        </div>
+        <div class="brand-logo-text">
+          <span class="brand-name">ELARA</span>
+          <span class="brand-subtitle">UNISEX SALON</span>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="gallery.html" class="nav-link active">Gallery</a></li>
+        <li><a href="about.html" class="nav-link">About Us</a></li>
+        <li><a href="booking.html" class="nav-link">Book Now</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="tel:+919820358282" class="nav-phone">
+          <i class="fa-solid fa-phone gold-text"></i>
+          <span>9820358282</span>
+        </a>
+        <a href="booking.html" class="btn btn-outline-gold btn-sm">Book Appointment</a>
+        <button class="mobile-toggle" aria-label="Toggle Navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <span class="section-tagline">Visual Artistry</span>
+      <h1 class="section-title">Lookbook &amp; Atelier Portfolio</h1>
+      <p class="section-subtitle">
+        Explore real transformations curated by our master directors Anand and Dildar. Click on any style to view high-resolution details or book an exact recreation.
+      </p>
+
+      <!-- Category Filter Tabs -->
+      <div class="gallery-filter-nav">
+        <button class="filter-btn active" data-filter="all">All Styles</button>
+        <button class="filter-btn" data-filter="hair">Hair Styling &amp; Cuts</button>
+        <button class="filter-btn" data-filter="color">Balayage &amp; Color</button>
+        <button class="filter-btn" data-filter="bridal">Bridal &amp; Makeup</button>
+        <button class="filter-btn" data-filter="nails">Nails &amp; Art</button>
+        <button class="filter-btn" data-filter="men">Men's Grooming</button>
+        <button class="filter-btn" data-filter="ambiance">Salon Ambiance</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Showcase Grid -->
+  <section class="container">
+    <div class="gallery-grid">
+
+      <!-- Item 1: Interior -->
+      <div class="gallery-item" data-category="ambiance">
+        <img src="assets/images/elara-salon-interior-gold-chairs.jpg" alt="Elara Atelier Salon Interior" loading="lazy">
+        <div class="gallery-overlay">
+          <span class="gallery-category">Salon Ambiance</span>
+          <h3 class="gallery-title">Luxury Styling Stations &amp; Gold Pedestal Chairs</h3>
+        </div>
+      </div>
+
+      <!-- Item 2: Honey Balayage Gold Chair -->
+      <div class="gallery-item" data-category="color">
+        <img src="assets/images/elara-honey-balayage-gold-chair.jpg" alt="Honey Balayage Waves" loading="lazy">
+        <div class="gallery-overlay">
+          <span class="gallery-category">Balayage &amp; Color</span>
+          <h3 class="gallery-title">Long Chocolate Honey Balayage Waves</h3>
+        </div>
+      </div>
+
+      <!-- Item 3: Platinum Silver Ash -->
+      <div class="gallery-item" data-category="color">
+        <img src="assets/images/elara-platinum-silver-ash-balayage.jpg" alt="Platinum Ash Balayage" loading="lazy">
+        <div class="gallery-overlay">
+          <span class="gallery-category">Balayage &amp; Color</span>
+          <h3 class="gallery-title">Platinum Silver Ash Balayage with Shadow Root</h3>
+        </div>
+      </div>
+
+      <!-- Item 4: Copper Auburn Ginger Blowout -->
+      <div class="gallery-item" data-category="color">
+        <img src="assets/images/elara-copper-auburn-ginger-blowout.jpg" alt="Copper Auburn Blowout" loading="lazy">
+        <div class="gallery-overlay">
+          <span class="gallery-category">Balayage &amp; Color</span>
+          <h3 class="gallery-title">Vibrant Copper Auburn &amp; Ginger Blowout</h3>
+        </div>
+      </div>
+
+      <!-- Item 5: Nanoplastia Glass Hair -->
+      <div class="gallery-item" data-category="hair">
+        <img src="assets/images/elara-nanoplastia-glass-hair-straight.jpg" alt="Nanoplastia Glass Hair" loading="lazy">
+        <div class="gallery-overlay">
+          <span class="gallery-category">Hair Treatments</span>
+          <h3 class="gallery-title">Nanoplastia Glass-Hair Mirror-Straight Finish</h3>
+        </div>
+      </div>
+
+      <!-- Item 6: Waist Length Golden Balayage -->
+      <div class="gallery-item" data-category="color">
+        <img src="assets/images/elara-waist-length-golden-balayage.jpg" alt="Waist Length Golden Balayage" loading="lazy">
+        <div class="gallery-overlay">
+          <span class="gallery-category">Balayage &amp; Color</span>
+          <h3 class="gallery-title">Waist-Length Multi-Tonal Golden Balayage</h3>
+        </div>
+      </div>
+
+      <!-- Item 7: Burgundy Wine Transformation -->
+      <div class="gallery-item" data-category="color">
+        <img src="assets/images/elara-burgundy-wine-hair-transformation.jpg" alt="Burgundy Wine Transformation" loading="lazy">
+        <div class="gallery-overlay">
+          <span class="gallery-category">Balayage &amp; Color</span>
+          <h3 class="gallery-title">Burgundy Wine Hair Transformation</h3>
+        </div>
+      </div>
+
+      <!-- Item 8: Ruby Red Ombre Curls -->
+      <div class="gallery-item" data-category="color">
+        <img src="assets/images/elara-ruby-red-ombre-curls.jpg" alt="Ruby Red Ombre Curls" loading="lazy">
+        <div class="gallery-overlay">
+          <span class="gallery-category">Balayage &amp; Color</span>
+          <h3 class="gallery-title">Ruby Red Ombré Curls &amp; Silk Bounce</h3>
+        </div>
+      </div>
+
+      <!-- Item 9: Honey Blonde Balayage Client -->
+      <div class="gallery-item" data-category="hair">
+        <img src="assets/images/elara-honey-blonde-balayage-client.jpg" alt="Honey Blonde Face Framing" loading="lazy">
+        <div class="gallery-overlay">
+          <span class="gallery-category">Hair Styling &amp; Cuts</span>
+          <h3 class="gallery-title">Honey Blonde Face-Framing Layers &amp; Volume</h3>
+        </div>
+      </div>
+
+      <!-- Item 10: Ash Brown Voluminous Blowout -->
+      <div class="gallery-item" data-category="hair">
+        <img src="assets/images/elara-ash-brown-voluminous-blowout.jpg" alt="Ash Brown Blowout" loading="lazy">
+        <div class="gallery-overlay">
+          <span class="gallery-category">Hair Styling &amp; Cuts</span>
+          <h3 class="gallery-title">Ash Brown Voluminous Curtain Bangs Blowout</h3>
+        </div>
+      </div>
+
+      <!-- Item 11: Dimensional Caramel Balayage -->
+      <div class="gallery-item" data-category="color">
+        <img src="assets/images/elara-dimensional-caramel-balayage.jpg" alt="Dimensional Caramel Balayage" loading="lazy">
+        <div class="gallery-overlay">
+          <span class="gallery-category">Balayage &amp; Color</span>
+          <h3 class="gallery-title">Dimensional Caramel Ribbon Balayage</h3>
+        </div>
+      </div>
+
+      <!-- Item 12: Chestnut Curtain Bangs -->
+      <div class="gallery-item" data-category="hair">
+        <img src="assets/images/elara-chestnut-curtain-bangs-blowout.jpg" alt="Chestnut Curtain Bangs" loading="lazy">
+        <div class="gallery-overlay">
+          <span class="gallery-category">Hair Styling &amp; Cuts</span>
+          <h3 class="gallery-title">Warm Chestnut Layered Blowout &amp; Curtain Bangs</h3>
+        </div>
+      </div>
+
+      <!-- Item 13: Cherry Ruby Red Balayage -->
+      <div class="gallery-item" data-category="color">
+        <img src="assets/images/elara-cherry-ruby-red-balayage.jpg" alt="Cherry Ruby Red Balayage" loading="lazy">
+        <div class="gallery-overlay">
+          <span class="gallery-category">Balayage &amp; Color</span>
+          <h3 class="gallery-title">Crimson Cherry Ruby Red Balayage Curls</h3>
+        </div>
+      </div>
+
+      <!-- Item 14: Rose Gold Mauve Waves -->
+      <div class="gallery-item" data-category="color">
+        <img src="assets/images/elara-rose-gold-mauve-waves.jpg" alt="Rose Gold Mauve Waves" loading="lazy">
+        <div class="gallery-overlay">
+          <span class="gallery-category">Balayage &amp; Color</span>
+          <h3 class="gallery-title">Rose Gold &amp; Mauve Gloss Textured Waves</h3>
+        </div>
+      </div>
+
+      <!-- Item 15: Honey Caramel Portrait -->
+      <div class="gallery-item" data-category="hair">
+        <img src="assets/images/elara-honey-caramel-waves-portrait.jpg" alt="Honey Caramel Waves" loading="lazy">
+        <div class="gallery-overlay">
+          <span class="gallery-category">Hair Styling &amp; Cuts</span>
+          <h3 class="gallery-title">Honey Caramel Wave Portrait</h3>
+        </div>
+      </div>
+
+      <!-- Item 16: Two Happy Clients -->
+      <div class="gallery-item" data-category="ambiance">
+        <img src="assets/images/elara-two-happy-clients-salon.jpg" alt="Two Happy Clients" loading="lazy">
+        <div class="gallery-overlay">
+          <span class="gallery-category">Salon Ambiance</span>
+          <h3 class="gallery-title">Clients Celebrating Hair Transformations</h3>
+        </div>
+      </div>
+
+      <!-- Item 17: Sleek Lob Babylights -->
+      <div class="gallery-item" data-category="hair">
+        <img src="assets/images/elara-sleek-lob-babylights.jpg" alt="Sleek Lob Babylights" loading="lazy">
+        <div class="gallery-overlay">
+          <span class="gallery-category">Hair Treatments</span>
+          <h3 class="gallery-title">Sleek Straight Lob with Fine Babylights</h3>
+        </div>
+      </div>
+
+      <!-- Item 18: L'Oreal Copper Showcase -->
+      <div class="gallery-item" data-category="ambiance">
+        <img src="assets/images/elara-loreal-copper-waves-showcase.jpg" alt="L'Oreal Copper Showcase" loading="lazy">
+        <div class="gallery-overlay">
+          <span class="gallery-category">Salon Ambiance</span>
+          <h3 class="gallery-title">L'Oréal Professionnel Wall &amp; Copper Waves</h3>
+        </div>
+      </div>
+
+      <!-- Item 19: Ash Bronde Caramel Curls -->
+      <div class="gallery-item" data-category="color">
+        <img src="assets/images/elara-ash-bronde-caramel-curls.jpg" alt="Ash Bronde Caramel Curls" loading="lazy">
+        <div class="gallery-overlay">
+          <span class="gallery-category">Balayage &amp; Color</span>
+          <h3 class="gallery-title">Ash Bronde Balayage with Big Hollywood Curls</h3>
+        </div>
+      </div>
+
+      <!-- Item 20: Bridal Makeup -->
+      <div class="gallery-item" data-category="bridal">
+        <img src="assets/images/bridal-makeup.jpg" alt="Royal Indian Bridal Makeup" loading="lazy">
+        <div class="gallery-overlay">
+          <span class="gallery-category">Bridal &amp; Makeup</span>
+          <h3 class="gallery-title">Royal Indian Bridal HD Glow</h3>
+        </div>
+      </div>
+
+      <!-- Item 21: Men's Grooming -->
+      <div class="gallery-item" data-category="men">
+        <img src="assets/images/men-grooming.jpg" alt="Executive Taper Fade & Beard Sculpt" loading="lazy">
+        <div class="gallery-overlay">
+          <span class="gallery-category">Men's Grooming</span>
+          <h3 class="gallery-title">Executive Taper Fade &amp; Beard Sculpt</h3>
+        </div>
+      </div>
+
+      <!-- Item 22: Nail Extensions -->
+      <div class="gallery-item" data-category="nails">
+        <img src="assets/images/nail-art.jpg" alt="Gel Nail Extensions" loading="lazy">
+        <div class="gallery-overlay">
+          <span class="gallery-category">Nails &amp; Art</span>
+          <h3 class="gallery-title">French Ombré Gel Nails with Gold Foil</h3>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Video Showcase In Gallery -->
+  <section class="video-showcase-section" style="margin-bottom: 4rem;">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tagline">Watch Transformations Live</span>
+        <h2 class="section-title">Video Reels From The Atelier</h2>
+        <p class="section-subtitle">Real salon reels captured directly at Elara Atelier in Vile Parle East.</p>
+      </div>
+
+      <div class="video-dual-grid">
+        <div class="luxury-video-card">
+          <div class="luxury-video-frame">
+            <div class="luxury-frame-notch"><span class="notch-speaker"></span><span class="notch-camera"></span></div>
+            <div class="video-screen-container">
+              <span class="video-live-badge"><span class="live-pulse-dot"></span><span>Styling Reel</span></span>
+              <video class="reel-video" autoplay muted loop playsinline preload="auto" poster="assets/images/elara-copper-auburn-ginger-blowout.jpg">
+                <source src="assets/video/elara-salon-artistry-reel.mp4" type="video/mp4">
+              </video>
+              <div class="video-controls-overlay">
+                <button class="video-ctrl-btn btn-play-toggle"><i class="fa-solid fa-pause"></i></button>
+                <span class="video-sound-status">MUTED</span>
+                <button class="video-ctrl-btn btn-sound-toggle"><i class="fa-solid fa-volume-xmark"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="video-caption-box">
+            <h3 class="video-caption-title">Color Craft &amp; Styling In Progress</h3>
+            <p class="video-caption-desc">Watch the complete transformation process by Anand.</p>
+          </div>
+        </div>
+
+        <div class="luxury-video-card">
+          <div class="luxury-video-frame">
+            <div class="luxury-frame-notch"><span class="notch-speaker"></span><span class="notch-camera"></span></div>
+            <div class="video-screen-container">
+              <span class="video-live-badge"><span class="live-pulse-dot"></span><span>Silk &amp; Shine</span></span>
+              <video class="reel-video" autoplay muted loop playsinline preload="auto" poster="assets/images/elara-ruby-red-ombre-curls.jpg">
+                <source src="assets/video/elara-ruby-silk-blowout-reel.mp4" type="video/mp4">
+              </video>
+              <div class="video-controls-overlay">
+                <button class="video-ctrl-btn btn-play-toggle"><i class="fa-solid fa-pause"></i></button>
+                <span class="video-sound-status">MUTED</span>
+                <button class="video-ctrl-btn btn-sound-toggle"><i class="fa-solid fa-volume-xmark"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="video-caption-box">
+            <h3 class="video-caption-title">High-Gloss Ruby Finish</h3>
+            <p class="video-caption-desc">Zero-frizz, mirror-reflective shine and dynamic movement.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Transformation Showcase -->
+  <section class="container">
+    <div class="transformation-section">
+      <div class="text-center" style="margin-bottom: 2rem;">
+        <span class="section-tagline">Real Results</span>
+        <h2 class="section-title">Before &amp; After Transformation</h2>
+        <p class="section-subtitle">Notice how Anand and Dildar repaired frizzy, dull locks into radiant mirror-shine strands with our Nanoplastia &amp; Balayage protocol.</p>
+      </div>
+
+      <div class="before-after-container">
+        <div class="split-photos">
+          <div class="split-photo-card">
+            <span class="split-label">Before</span>
+            <img src="assets/images/hair-styling.jpg" alt="Hair Before Treatment" style="filter: grayscale(40%) contrast(90%);">
+          </div>
+          <div class="split-photo-card">
+            <span class="split-label" style="background: var(--gold-gradient); color: #0b0c0e;">After</span>
+            <img src="assets/images/hero-model.jpg" alt="Hair After Treatment">
+          </div>
+        </div>
+
+        <div>
+          <span class="section-tagline" style="text-align: left; margin-left: 0;">Case Study #482</span>
+          <h3 class="serif" style="font-size: 1.8rem; color: #fff; margin-bottom: 1rem;">Complete Frizz-Free Revival</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.25rem;">
+            <strong>Guest:</strong> Roshni V., Vile Parle East<br>
+            <strong>Hair Diagnosis:</strong> High porosity, chemical damage from box dye, severe humidity frizz.<br>
+            <strong>Protocol Executed:</strong> Olaplex No. 1 Bond Builder, organic Nanoplastia smoothening, and root shadow with warm chestnut babylights.<br>
+            <strong>Duration:</strong> 3.5 Hours by Anand.
+          </p>
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="booking.html?service=Nanoplastia" class="btn btn-blush">Recreate This Look</a>
+            <a href="tel:9820358282" class="btn btn-outline-gold"><i class="fa-solid fa-phone"></i> Consult Anand</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox-modal" id="gallery-lightbox">
+    <div class="lightbox-container">
+      <button class="lightbox-close" aria-label="Close Lightbox">&times;</button>
+      <img src="" alt="Lookbook Zoom" class="lightbox-img">
+      <div class="lightbox-meta">
+        <div>
+          <span class="gallery-category lightbox-category">Category</span>
+          <h4 class="lightbox-title" style="font-size: 1.2rem; color: #fff; font-family: var(--font-serif);">Title</h4>
+        </div>
+        <a href="booking.html" class="btn btn-blush btn-sm">Book This Look</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-col">
+          <div class="brand-logo" style="margin-bottom: 1.25rem;">
+            <div class="brand-logo-icon"><i class="fa-solid fa-scissors"></i></div>
+            <div class="brand-logo-text">
+              <span class="brand-name">ELARA</span>
+              <span class="brand-subtitle">UNISEX SALON</span>
+            </div>
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;">
+            Touchwood Building, Shop No. 4, Sahaj Raje Road, Opp. Parle Eshwar Soc, Near Bhuta School, Vile Parle East, Mumbai &ndash; 400057.
+          </p>
+          <div class="footer-social-links">
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="social-circle-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" class="social-circle-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://wa.me/919820358282" target="_blank" rel="noopener" class="social-circle-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services &amp; Pricing</a></li>
+            <li><a href="gallery.html">Lookbook &amp; Gallery</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="booking.html">Book Appointment</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Direct Contacts</h4>
+          <div class="footer-hours-list">
+            <p><strong>Anand:</strong> <a href="tel:9820358282" style="color: var(--gold-light);">9820358282</a></p>
+            <p><strong>Dildar:</strong> <a href="tel:9555234427" style="color: var(--gold-light);">9555234427</a></p>
+            <p><strong>Shop Phone:</strong> <a href="tel:9867623177" style="color: var(--gold-light);">9867623177</a></p>
+            <p style="margin-top: 0.5rem;"><strong>Hours:</strong> 10:00 AM &ndash; 9:30 PM (All 7 Days)</p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Tag Us on Instagram</h4>
+          <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.6;">
+            Share your transformation photos with <strong>#ElaraAtelierMumbai</strong> for a chance to be featured on our monthly style spotlight and receive 10% off your next treatment!
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <p class="copyright-text">&copy; 2024 Sahaj Raje Road / Elara Atelier. All Rights Reserved.</p>
+        <a href="booking.html" class="btn btn-blush btn-sm">Book Now</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Quick Actions -->
+  <div class="floating-actions">
+    <a href="https://wa.me/919820358282?text=Hello%20Elara%20Atelier,%20I%20would%20like%20to%20book%20a%20look%20from%20your%20gallery." target="_blank" rel="noopener" class="floating-btn floating-whatsapp" aria-label="Chat on WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+      <span class="tooltip">Chat on WhatsApp</span>
+    </a>
+    <a href="tel:9820358282" class="floating-btn floating-call" aria-label="Call">
+      <i class="fa-solid fa-phone"></i>
+      <span class="tooltip">Call 9820358282</span>
+    </a>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/gallery.js"></script>
+</body>
+</html>
+

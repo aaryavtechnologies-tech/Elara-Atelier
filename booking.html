@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Appointment | Elara Atelier Unisex Salon Mumbai</title>
+  <meta name="description" content="Book an appointment online at Elara Atelier Unisex Salon in Vile Parle East, Mumbai. Select services, choose your preferred stylist Anand or Dildar, and pick your time.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="site-header">
+    <div class="container navbar-inner">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-logo-icon">
+          <i class="fa-solid fa-scissors"></i>
+        </div>
+        <div class="brand-logo-text">
+          <span class="brand-name">ELARA</span>
+          <span class="brand-subtitle">UNISEX SALON</span>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li><a href="about.html" class="nav-link">About Us</a></li>
+        <li><a href="booking.html" class="nav-link active">Book Now</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="tel:+919820358282" class="nav-phone">
+          <i class="fa-solid fa-phone gold-text"></i>
+          <span>9820358282</span>
+        </a>
+        <a href="booking.html" class="btn btn-outline-gold btn-sm">Book Appointment</a>
+        <button class="mobile-toggle" aria-label="Toggle Navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <span class="section-tagline">Seamless Reservations</span>
+      <h1 class="section-title">Book Your Appointment</h1>
+      <p class="section-subtitle">
+        Reserve your personalized pampering session in just a few clicks. Select your desired treatments, choose your stylist, and pick a convenient time slot.
+      </p>
+    </div>
+  </section>
+
+  <!-- Booking Section -->
+  <section class="booking-section">
+    <div class="container">
+      <div class="booking-layout">
+
+        <!-- Form Column -->
+        <div class="booking-card">
+          <form id="appointment-form">
+
+            <!-- Step 1: Select Services -->
+            <div class="form-group">
+              <label class="form-label">
+                <i class="fa-solid fa-1 gold-text" style="margin-right: 6px;"></i> Select Treatments &amp; Services (Multiple Allowed)
+              </label>
+              
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 0.75rem;">
+                
+                <label style="display: flex; align-items: flex-start; gap: 0.6rem; background: var(--bg-card); padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,0.08); cursor: pointer;">
+                  <input type="checkbox" class="service-checkbox" value="Director Haircut Women" data-name="Director Haircut (Women)" data-price="1200" style="margin-top: 3px; accent-color: var(--gold-primary);">
+                  <div>
+                    <span style="font-size: 0.88rem; font-weight: 600; color: #fff; display: block;">Women's Director Haircut</span>
+                    <span style="font-size: 0.75rem; color: var(--gold-light);">₹1,200 &bull; 45 mins</span>
+                  </div>
+                </label>
+
+                <label style="display: flex; align-items: flex-start; gap: 0.6rem; background: var(--bg-card); padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,0.08); cursor: pointer;">
+                  <input type="checkbox" class="service-checkbox" value="Gentlemans Cut Beard" data-name="Gentleman's Cut & Beard" data-price="750" style="margin-top: 3px; accent-color: var(--gold-primary);">
+                  <div>
+                    <span style="font-size: 0.88rem; font-weight: 600; color: #fff; display: block;">Men's Cut &amp; Beard Styling</span>
+                    <span style="font-size: 0.75rem; color: var(--gold-light);">₹750 &bull; 40 mins</span>
+                  </div>
+                </label>
+
+                <label style="display: flex; align-items: flex-start; gap: 0.6rem; background: var(--bg-card); padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,0.08); cursor: pointer;">
+                  <input type="checkbox" class="service-checkbox" value="French Balayage" data-name="French Balayage & Olaplex" data-price="4500" style="margin-top: 3px; accent-color: var(--gold-primary);">
+                  <div>
+                    <span style="font-size: 0.88rem; font-weight: 600; color: #fff; display: block;">French Balayage &amp; Highlights</span>
+                    <span style="font-size: 0.75rem; color: var(--gold-light);">₹4,500+ &bull; 150 mins</span>
+                  </div>
+                </label>
+
+                <label style="display: flex; align-items: flex-start; gap: 0.6rem; background: var(--bg-card); padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,0.08); cursor: pointer;">
+                  <input type="checkbox" class="service-checkbox" value="Global Hair Color" data-name="Global Hair Color (Ammonia-Free)" data-price="2800" style="margin-top: 3px; accent-color: var(--gold-primary);">
+                  <div>
+                    <span style="font-size: 0.88rem; font-weight: 600; color: #fff; display: block;">Global INOA Hair Color</span>
+                    <span style="font-size: 0.75rem; color: var(--gold-light);">₹2,800+ &bull; 90 mins</span>
+                  </div>
+                </label>
+
+                <label style="display: flex; align-items: flex-start; gap: 0.6rem; background: var(--bg-card); padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,0.08); cursor: pointer;">
+                  <input type="checkbox" class="service-checkbox" value="Brazilian Keratin" data-name="Brazilian Keratin Infusion" data-price="4999" style="margin-top: 3px; accent-color: var(--gold-primary);">
+                  <div>
+                    <span style="font-size: 0.88rem; font-weight: 600; color: #fff; display: block;">Brazilian Keratin Treatment</span>
+                    <span style="font-size: 0.75rem; color: var(--gold-light);">₹4,999+ &bull; 180 mins</span>
+                  </div>
+                </label>
+
+                <label style="display: flex; align-items: flex-start; gap: 0.6rem; background: var(--bg-card); padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,0.08); cursor: pointer;">
+                  <input type="checkbox" class="service-checkbox" value="Nanoplastia" data-name="Organic Nanoplastia Restructure" data-price="5999" style="margin-top: 3px; accent-color: var(--gold-primary);">
+                  <div>
+                    <span style="font-size: 0.88rem; font-weight: 600; color: #fff; display: block;">Nanoplastia Organic Therapy</span>
+                    <span style="font-size: 0.75rem; color: var(--gold-light);">₹5,999+ &bull; 200 mins</span>
+                  </div>
+                </label>
+
+                <label style="display: flex; align-items: flex-start; gap: 0.6rem; background: var(--bg-card); padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,0.08); cursor: pointer;">
+                  <input type="checkbox" class="service-checkbox" value="HydraFacial" data-name="HydraFacial 7-in-1 Glow" data-price="3200" style="margin-top: 3px; accent-color: var(--gold-primary);">
+                  <div>
+                    <span style="font-size: 0.88rem; font-weight: 600; color: #fff; display: block;">HydraFacial 7-in-1 Skin Glow</span>
+                    <span style="font-size: 0.75rem; color: var(--gold-light);">₹3,200 &bull; 75 mins</span>
+                  </div>
+                </label>
+
+                <label style="display: flex; align-items: flex-start; gap: 0.6rem; background: var(--bg-card); padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,0.08); cursor: pointer;">
+                  <input type="checkbox" class="service-checkbox" value="24K Gold Facial" data-name="24K Gold Illuminating Facial" data-price="2500" style="margin-top: 3px; accent-color: var(--gold-primary);">
+                  <div>
+                    <span style="font-size: 0.88rem; font-weight: 600; color: #fff; display: block;">24K Gold Illuminating Facial</span>
+                    <span style="font-size: 0.75rem; color: var(--gold-light);">₹2,500 &bull; 60 mins</span>
+                  </div>
+                </label>
+
+                <label style="display: flex; align-items: flex-start; gap: 0.6rem; background: var(--bg-card); padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,0.08); cursor: pointer;">
+                  <input type="checkbox" class="service-checkbox" value="Kerastase Spa" data-name="Kérastase Fusio-Dose Spa" data-price="1800" style="margin-top: 3px; accent-color: var(--gold-primary);">
+                  <div>
+                    <span style="font-size: 0.88rem; font-weight: 600; color: #fff; display: block;">Kérastase Fusio-Dose Spa</span>
+                    <span style="font-size: 0.75rem; color: var(--gold-light);">₹1,800 &bull; 60 mins</span>
+                  </div>
+                </label>
+
+                <label style="display: flex; align-items: flex-start; gap: 0.6rem; background: var(--bg-card); padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,0.08); cursor: pointer;">
+                  <input type="checkbox" class="service-checkbox" value="Nail Extensions" data-name="Gel / Acrylic Nail Extensions" data-price="2200" style="margin-top: 3px; accent-color: var(--gold-primary);">
+                  <div>
+                    <span style="font-size: 0.88rem; font-weight: 600; color: #fff; display: block;">Gel Nail Extensions &amp; Art</span>
+                    <span style="font-size: 0.75rem; color: var(--gold-light);">₹2,200+ &bull; 90 mins</span>
+                  </div>
+                </label>
+
+                <label style="display: flex; align-items: flex-start; gap: 0.6rem; background: var(--bg-card); padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,0.08); cursor: pointer;">
+                  <input type="checkbox" class="service-checkbox" value="Bridal HD Makeup" data-name="Bridal HD Couture Makeup" data-price="12000" style="margin-top: 3px; accent-color: var(--gold-primary);">
+                  <div>
+                    <span style="font-size: 0.88rem; font-weight: 600; color: #fff; display: block;">Bridal HD Couture Makeup</span>
+                    <span style="font-size: 0.75rem; color: var(--gold-light);">₹12,000+ &bull; 180 mins</span>
+                  </div>
+                </label>
+
+                <label style="display: flex; align-items: flex-start; gap: 0.6rem; background: var(--bg-card); padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,0.08); cursor: pointer;">
+                  <input type="checkbox" class="service-checkbox" value="Executive Mens Package" data-name="Executive Men's Grooming" data-price="1600" style="margin-top: 3px; accent-color: var(--gold-primary);">
+                  <div>
+                    <span style="font-size: 0.88rem; font-weight: 600; color: #fff; display: block;">Men's Executive Package</span>
+                    <span style="font-size: 0.75rem; color: var(--gold-light);">₹1,600 &bull; 75 mins</span>
+                  </div>
+                </label>
+
+              </div>
+            </div>
+
+            <!-- Step 2: Choose Stylist -->
+            <div class="form-group" style="margin-top: 2rem;">
+              <label class="form-label">
+                <i class="fa-solid fa-2 gold-text" style="margin-right: 6px;"></i> Select Preferred Stylist
+              </label>
+              
+              <div class="stylist-options-grid">
+                <div class="stylist-radio-card">
+                  <input type="radio" id="stylist-anand" name="stylist" value="Anand (Creative Director)">
+                  <label for="stylist-anand" class="stylist-radio-label">
+                    <img src="assets/images/elara-copper-auburn-ginger-blowout.jpg" alt="Anand" style="width: 42px; height: 42px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--border-gold); margin-bottom: 0.35rem;">
+                    <h5>Anand</h5>
+                    <span>Director (9820358282)</span>
+                  </label>
+                </div>
+
+                <div class="stylist-radio-card">
+                  <input type="radio" id="stylist-dildar" name="stylist" value="Dildar (Senior Stylist)">
+                  <label for="stylist-dildar" class="stylist-radio-label">
+                    <img src="assets/images/elara-honey-blonde-balayage-client.jpg" alt="Dildar" style="width: 42px; height: 42px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--border-gold); margin-bottom: 0.35rem;">
+                    <h5>Dildar</h5>
+                    <span>Director (9555234427)</span>
+                  </label>
+                </div>
+
+                <div class="stylist-radio-card">
+                  <input type="radio" id="stylist-any" name="stylist" value="Any Master Stylist" checked>
+                  <label for="stylist-any" class="stylist-radio-label">
+                    <i class="fa-solid fa-users"></i>
+                    <h5>Any Specialist</h5>
+                    <span>First Available</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 3: Date & Time -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="booking-date" class="form-label">
+                  <i class="fa-solid fa-3 gold-text" style="margin-right: 6px;"></i> Preferred Date
+                </label>
+                <input type="date" id="booking-date" class="form-control" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">
+                  <i class="fa-regular fa-clock gold-text" style="margin-right: 6px;"></i> Preferred Time Slot
+                </label>
+                <input type="hidden" id="selected-time-slot" value="11:30 AM">
+                <div class="time-slots-grid">
+                  <button type="button" class="time-slot-btn" data-time="10:30 AM">10:30 AM</button>
+                  <button type="button" class="time-slot-btn selected" data-time="11:30 AM">11:30 AM</button>
+                  <button type="button" class="time-slot-btn" data-time="01:00 PM">01:00 PM</button>
+                  <button type="button" class="time-slot-btn" data-time="02:30 PM">02:30 PM</button>
+                  <button type="button" class="time-slot-btn" data-time="04:00 PM">04:00 PM</button>
+                  <button type="button" class="time-slot-btn" data-time="05:30 PM">05:30 PM</button>
+                  <button type="button" class="time-slot-btn" data-time="07:00 PM">07:00 PM</button>
+                  <button type="button" class="time-slot-btn" data-time="08:00 PM">08:00 PM</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 4: Client Info -->
+            <div style="margin-top: 1.5rem;">
+              <label class="form-label">
+                <i class="fa-solid fa-4 gold-text" style="margin-right: 6px;"></i> Guest Contact Information
+              </label>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="client-name" class="form-label">Your Full Name *</label>
+                  <input type="text" id="client-name" class="form-control" placeholder="e.g. Priya Sharma" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="client-phone" class="form-label">Mobile Number *</label>
+                  <input type="tel" id="client-phone" class="form-control" placeholder="e.g. 9820000000" pattern="[0-9]{10}" required>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="client-email" class="form-label">Email Address (Optional)</label>
+                  <input type="email" id="client-email" class="form-control" placeholder="priya@example.com">
+                </div>
+
+                <div class="form-group">
+                  <label for="client-gender" class="form-label">Gender Preference</label>
+                  <select id="client-gender" class="form-control">
+                    <option value="Female">Female</option>
+                    <option value="Male">Male</option>
+                    <option value="Unisex / Any">No preference</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="client-notes" class="form-label">Special Requests / Hair Concerns (Optional)</label>
+                <textarea id="client-notes" class="form-control" rows="3" placeholder="e.g., Sensitive scalp, previous henna coloring, bridal consultation, etc."></textarea>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-blush btn-lg" style="width: 100%; margin-top: 1rem;">
+              <i class="fa-solid fa-calendar-check"></i> Confirm Appointment
+            </button>
+          </form>
+        </div>
+
+        <!-- Sticky Live Booking Summary Sidebar -->
+        <div class="booking-summary-card">
+          <div class="summary-header">
+            <h3>Reservation Summary</h3>
+            <span style="font-size: 0.8rem; color: var(--gold-light); letter-spacing: 1px; text-transform: uppercase;">Touchwood Bldg &bull; Vile Parle East</span>
+          </div>
+
+          <div class="summary-list">
+            <div class="summary-row">
+              <span>Location:</span>
+              <span>Shop No. 4, Sahaj Raje Rd</span>
+            </div>
+
+            <div class="summary-row">
+              <span>Stylist:</span>
+              <span id="summary-stylist">Any Master Stylist</span>
+            </div>
+
+            <div class="summary-row">
+              <span>Date &amp; Slot:</span>
+              <span id="summary-date-time">Today at 11:30 AM</span>
+            </div>
+
+            <div style="border-top: 1px solid rgba(255,255,255,0.06); padding-top: 0.8rem; margin-top: 0.4rem;">
+              <span style="font-size: 0.82rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 0.5rem;">Chosen Services:</span>
+              <div id="summary-services-list" style="font-size: 0.9rem; line-height: 1.6;">
+                <span style="color: var(--text-dim);">No service selected yet</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="summary-total">
+            <span>Estimated Total:</span>
+            <span id="summary-total-price">₹0</span>
+          </div>
+
+          <div style="margin-top: 1.75rem; background: rgba(212, 175, 55, 0.08); border: 1px solid rgba(212, 175, 55, 0.2); border-radius: var(--radius-sm); padding: 1rem; text-align: center;">
+            <p style="font-size: 0.82rem; color: #fff; margin-bottom: 0.5rem;">Need immediate confirmation?</p>
+            <div style="display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap;">
+              <a href="tel:9820358282" style="font-size: 0.78rem; color: var(--gold-light); font-weight: 600;"><i class="fa-solid fa-phone"></i> Anand (9820358282)</a>
+              <span style="color: var(--text-dim);">|</span>
+              <a href="tel:9555234427" style="font-size: 0.78rem; color: var(--gold-light); font-weight: 600;"><i class="fa-solid fa-phone"></i> Dildar (9555234427)</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Confirmation Modal -->
+  <div class="modal-backdrop" id="booking-modal">
+    <div class="modal-content">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close dialog">&times;</button>
+      <div class="modal-success-icon">
+        <i class="fa-solid fa-check"></i>
+      </div>
+      <span class="section-tagline">Booking Requested!</span>
+      <h3 class="serif" style="font-size: 1.8rem; color: #fff; margin-bottom: 0.5rem;">Thank You, <span id="modal-client-name">Guest</span>!</h3>
+      <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 1.5rem;">
+        Your reservation request has been created with reference <strong id="modal-ref-id" class="gold-text">ELARA-1000</strong>.
+      </p>
+
+      <div style="background: var(--bg-card); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-sm); padding: 1rem; text-align: left; margin-bottom: 1.75rem; font-size: 0.88rem; line-height: 1.6;">
+        <p><strong>Services:</strong> <span id="modal-services">Haircut</span></p>
+        <p><strong>Stylist:</strong> <span id="modal-stylist">Anand</span></p>
+        <p><strong>Appointment:</strong> <span id="modal-time">Tomorrow at 11:30 AM</span></p>
+        <p><strong>Location:</strong> Touchwood Bldg, Sahaj Raje Rd, Vile Parle East</p>
+      </div>
+
+      <p style="color: var(--gold-light); font-size: 0.85rem; margin-bottom: 1.25rem;">
+        To ensure instant confirmation and slot locking, dispatch your booking details directly to Anand or Dildar on WhatsApp:
+      </p>
+
+      <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+        <a id="modal-whatsapp-btn" href="#" target="_blank" rel="noopener" class="btn btn-blush" style="background: #25d366; color: #fff; border-color: #25d366;">
+          <i class="fa-brands fa-whatsapp"></i> Confirm Instant on WhatsApp
+        </a>
+        <a href="index.html" class="btn btn-outline-gold btn-sm">Return to Homepage</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-col">
+          <div class="brand-logo" style="margin-bottom: 1.25rem;">
+            <div class="brand-logo-icon"><i class="fa-solid fa-scissors"></i></div>
+            <div class="brand-logo-text">
+              <span class="brand-name">ELARA</span>
+              <span class="brand-subtitle">UNISEX SALON</span>
+            </div>
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;">
+            Touchwood Building, Shop No. 4, Sahaj Raje Road, Opp. Parle Eshwar Soc, Near Bhuta School, Vile Parle East, Mumbai &ndash; 400057.
+          </p>
+          <div class="footer-social-links">
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="social-circle-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" class="social-circle-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://wa.me/919820358282" target="_blank" rel="noopener" class="social-circle-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services &amp; Pricing</a></li>
+            <li><a href="gallery.html">Lookbook &amp; Gallery</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="booking.html">Book Appointment</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Direct Contacts</h4>
+          <div class="footer-hours-list">
+            <p><strong>Anand:</strong> <a href="tel:9820358282" style="color: var(--gold-light);">9820358282</a></p>
+            <p><strong>Dildar:</strong> <a href="tel:9555234427" style="color: var(--gold-light);">9555234427</a></p>
+            <p><strong>Shop Phone:</strong> <a href="tel:9867623177" style="color: var(--gold-light);">9867623177</a></p>
+            <p style="margin-top: 0.5rem;"><strong>Hours:</strong> 10:00 AM &ndash; 9:30 PM (All 7 Days)</p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Appointment Policy</h4>
+          <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.6;">
+            We recommend arriving 10 minutes prior to your scheduled time. Walk-ins are always welcomed subject to stylist chair availability.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <p class="copyright-text">&copy; 2024 Sahaj Raje Road / Elara Atelier. All Rights Reserved.</p>
+        <a href="booking.html" class="btn btn-blush btn-sm">Book Now</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Quick Actions -->
+  <div class="floating-actions">
+    <a href="https://wa.me/919820358282?text=Hello%20Elara%20Atelier,%20I%20have%20a%20question%20about%20booking." target="_blank" rel="noopener" class="floating-btn floating-whatsapp" aria-label="Chat on WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+      <span class="tooltip">Chat on WhatsApp</span>
+    </a>
+    <a href="tel:9820358282" class="floating-btn floating-call" aria-label="Call">
+      <i class="fa-solid fa-phone"></i>
+      <span class="tooltip">Call 9820358282</span>
+    </a>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/booking.js"></script>
+</body>
+</html>
+
