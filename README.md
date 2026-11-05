@@ -54,3 +54,4 @@ A modern, responsive multi-page website for **Elara Atelier (Elara Unisex Salon)
 
 ## 📄 License
 © 2024–2026 Elara Atelier / Sahaj Raje Road, Vile Parle East, Mumbai. All Rights Reserved.
+
