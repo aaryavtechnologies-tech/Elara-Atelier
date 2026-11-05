@@ -18,7 +18,6 @@ function initBookingEngine() {
   const summaryServicesList = document.getElementById('summary-services-list');
   const summaryStylist = document.getElementById('summary-stylist');
   const summaryDateTime = document.getElementById('summary-date-time');
-  const summaryTotal = document.getElementById('summary-total-price');
 
   // Confirmation modal elements
   const modal = document.getElementById('booking-modal');
@@ -60,14 +59,11 @@ function initBookingEngine() {
   // Update summary calculation
   function updateSummary() {
     let selectedServices = [];
-    let totalPrice = 0;
 
     serviceCheckboxes.forEach(cb => {
       if (cb.checked) {
         const name = cb.getAttribute('data-name');
-        const price = parseInt(cb.getAttribute('data-price'), 10) || 0;
-        selectedServices.push({ name, price });
-        totalPrice += price;
+        selectedServices.push(name);
       }
     });
 
@@ -76,13 +72,9 @@ function initBookingEngine() {
         summaryServicesList.innerHTML = '<span style="color: var(--text-dim);">No service selected yet</span>';
       } else {
         summaryServicesList.innerHTML = selectedServices
-          .map(s => `<div>${s.name} <small style="color: var(--gold-light);">₹${s.price.toLocaleString('en-IN')}</small></div>`)
+          .map(name => `<div><i class="fa-solid fa-circle-check gold-text" style="font-size: 0.75rem; margin-right: 5px;"></i> ${name}</div>`)
           .join('');
       }
-    }
-
-    if (summaryTotal) {
-      summaryTotal.innerText = `₹${totalPrice.toLocaleString('en-IN')}`;
     }
 
     // Stylist
@@ -110,7 +102,7 @@ function initBookingEngine() {
       }
     }
 
-    return { selectedServices, totalPrice, chosenStylist, chosenDate, chosenTime };
+    return { selectedServices, chosenStylist, chosenDate, chosenTime };
   }
 
   // Event Listeners for controls
@@ -136,7 +128,7 @@ function initBookingEngine() {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
 
-      const { selectedServices, totalPrice, chosenStylist, chosenDate, chosenTime } = updateSummary();
+      const { selectedServices, chosenStylist, chosenDate, chosenTime } = updateSummary();
 
       if (selectedServices.length === 0) {
         alert('Please select at least one service for your appointment.');
@@ -160,17 +152,15 @@ function initBookingEngine() {
       // Populate modal
       if (modalRef) modalRef.innerText = refId;
       if (modalClientName) modalClientName.innerText = clientName;
-      if (modalService) modalService.innerText = selectedServices.map(s => s.name).join(', ');
+      if (modalService) modalService.innerText = selectedServices.join(', ');
       if (modalStylist) modalStylist.innerText = chosenStylist;
       if (modalDateTime) modalDateTime.innerText = `${chosenDate} at ${chosenTime}`;
 
-      // Construct WhatsApp URL
-      const serviceNames = selectedServices.map(s => s.name).join(', ');
-      const message = `Hello Elara Atelier! 👋\nI would like to confirm my appointment booking:\n\n*Booking ID:* ${refId}\n*Name:* ${clientName}\n*Phone:* ${clientPhone}\n*Gender:* ${clientGender}\n*Services:* ${serviceNames}\n*Stylist:* ${chosenStylist}\n*Date & Time:* ${chosenDate} at ${chosenTime}\n*Estimated Total:* ₹${totalPrice.toLocaleString('en-IN')}\n*Notes:* ${clientNotes}\n\nPlease confirm availability. Thank you!`;
+      // Construct WhatsApp URL without prices
+      const serviceNames = selectedServices.join(', ');
+      const message = `Hello Elara Atelier! 👋\nI would like to confirm my appointment booking:\n\n*Booking ID:* ${refId}\n*Name:* ${clientName}\n*Phone:* ${clientPhone}\n*Gender:* ${clientGender}\n*Services:* ${serviceNames}\n*Stylist:* ${chosenStylist}\n*Date & Time:* ${chosenDate} at ${chosenTime}\n*Notes:* ${clientNotes}\n\nPlease confirm availability. Thank you!`;
 
       const encodedMessage = encodeURIComponent(message);
-      // Anand: 9820358282, Dildar: 9555234427, Shop: 9867623177
-      // Choose Anand or Dildar if selected, else primary Anand
       let targetPhone = '919820358282';
       if (chosenStylist.toLowerCase().includes('dildar')) {
         targetPhone = '919555234427';
@@ -193,4 +183,3 @@ function initBookingEngine() {
     });
   }
 }
-
