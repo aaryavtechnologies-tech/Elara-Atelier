@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeaderScroll();
   initSmoothScroll();
   initVideoControls();
+  initContactInquiry();
 });
 
 /* Mobile Menu Toggle */
@@ -145,5 +146,51 @@ function initVideoControls() {
     video.addEventListener('click', () => {
       if (playBtn) playBtn.click();
     });
+  });
+}
+
+/* Contact Page - Send Inquiry directly to WhatsApp 9820358282 */
+function initContactInquiry() {
+  const form = document.getElementById('contact-inquiry-form');
+  if (!form) return;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const nameInput = document.getElementById('inquiry-name');
+    const phoneInput = document.getElementById('inquiry-phone');
+    const subjectInput = document.getElementById('inquiry-subject');
+    const messageInput = document.getElementById('inquiry-message');
+    const statusDiv = document.getElementById('inquiry-status');
+
+    const name = nameInput ? nameInput.value.trim() : 'Guest';
+    const phone = phoneInput ? phoneInput.value.trim() : 'Not provided';
+    const subject = subjectInput ? subjectInput.value : 'General Inquiry';
+    const message = messageInput ? messageInput.value.trim() : '';
+
+    if (!message) {
+      alert('Please enter your message.');
+      return;
+    }
+
+    // Build WhatsApp message formatted cleanly
+    const waText = `Hello Anand / Elara Atelier! 👋\nI have an inquiry from the website:\n\n*Name:* ${name}\n*Phone:* ${phone}\n*Subject:* ${subject}\n*Message:* ${message}\n\nPlease reply at your earliest convenience. Thank you!`;
+
+    const targetPhone = '919820358282';
+    const waUrl = `https://wa.me/${targetPhone}?text=${encodeURIComponent(waText)}`;
+
+    // Open WhatsApp in new tab / application
+    window.open(waUrl, '_blank');
+
+    // Show visual confirmation on the page
+    if (statusDiv) {
+      statusDiv.innerHTML = `<i class="fa-brands fa-whatsapp" style="color: #25d366; margin-right: 6px;"></i> Opening WhatsApp to send your inquiry to <strong>9820358282</strong>!`;
+      statusDiv.style.display = 'block';
+    }
+
+    // Optional: reset form fields
+    setTimeout(() => {
+      form.reset();
+    }, 1500);
   });
 }

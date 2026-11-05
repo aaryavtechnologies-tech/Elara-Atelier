@@ -136,21 +136,21 @@
           <h4 class="serif" style="font-size: 1.3rem; color: #fff; margin-bottom: 0.5rem;">Send Us a Message</h4>
           <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.5rem;">Have questions about bridal dates or chemical treatments? Drop us a quick note.</p>
           
-          <form id="contact-inquiry-form" onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent to Anand & Dildar. We will call you back shortly.'); this.reset();">
+          <form id="contact-inquiry-form">
             <div class="form-row">
               <div class="form-group">
-                <label class="form-label">Your Name *</label>
-                <input type="text" class="form-control" placeholder="Your Name" required>
+                <label class="form-label" for="inquiry-name">Your Name *</label>
+                <input type="text" id="inquiry-name" class="form-control" placeholder="Your Name" required>
               </div>
               <div class="form-group">
-                <label class="form-label">Phone Number *</label>
-                <input type="tel" class="form-control" placeholder="10-digit Mobile" pattern="[0-9]{10}" required>
+                <label class="form-label" for="inquiry-phone">Phone Number *</label>
+                <input type="tel" id="inquiry-phone" class="form-control" placeholder="10-digit Mobile" pattern="[0-9]{10}" required>
               </div>
             </div>
 
             <div class="form-group">
-              <label class="form-label">Subject</label>
-              <select class="form-control">
+              <label class="form-label" for="inquiry-subject">Subject</label>
+              <select id="inquiry-subject" class="form-control">
                 <option value="General Inquiry">General Inquiry</option>
                 <option value="Hair Consultation">Hair Consultation (Color/Keratin)</option>
                 <option value="Bridal Package">Bridal / Wedding Party Package</option>
@@ -159,13 +159,18 @@
             </div>
 
             <div class="form-group">
-              <label class="form-label">Message</label>
-              <textarea class="form-control" rows="3" placeholder="Tell us what you are looking for..." required></textarea>
+              <label class="form-label" for="inquiry-message">Message *</label>
+              <textarea id="inquiry-message" class="form-control" rows="3" placeholder="Tell us what you are looking for..." required></textarea>
             </div>
 
-            <button type="submit" class="btn btn-blush" style="width: 100%;">
-              <i class="fa-solid fa-paper-plane"></i> Send Inquiry
+            <button type="submit" class="btn btn-blush" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px;">
+              <i class="fa-brands fa-whatsapp" style="font-size: 1.25rem; color: #25d366;"></i>
+              <span>Send Inquiry via WhatsApp</span>
             </button>
+            <p style="text-align: center; color: var(--text-dim); font-size: 0.78rem; margin-top: 0.75rem; margin-bottom: 0;">
+              <i class="fa-brands fa-whatsapp" style="color: #25d366;"></i> Directly sent to WhatsApp: <strong>9820358282</strong>
+            </p>
+            <div id="inquiry-status" style="display: none; margin-top: 1rem; padding: 0.75rem 1rem; background: rgba(37, 211, 102, 0.12); border: 1px solid rgba(37, 211, 102, 0.4); border-radius: var(--radius-sm); color: #d4f7dc; font-size: 0.85rem; text-align: center;"></div>
           </form>
         </div>
       </div>
@@ -282,7 +287,7 @@
   </div>
 
   <!-- Scripts -->
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js?v=2.3"></script>
 </body>
 </html>
 
