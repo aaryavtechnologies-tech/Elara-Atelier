@@ -10,11 +10,11 @@ A modern, responsive multi-page website for **Elara Atelier (Elara Unisex Salon)
 
 * **Multi-Page Architecture**:
   * **Home (`index.html`)**: Hero section, 8 signature circular services, auto-playing luxury video reels, salon ambiance showcase, client reviews, location map, and direct contacts.
-  * **Services (`services.html`)**: Complete pricing and treatment catalog with interactive category filters (*Hair Cut & Styling*, *Color & Balayage*, *Keratin & Nanoplastia*, *HydraFacial & Skin Care*, *Bridal & Makeup*, *Nail Extensions*, *Men's Grooming*).
+  * **Services (`services.html`)**: Bespoke salon and treatment catalog with duration estimates, ritual descriptions, and instant *"Book This"* links.
   * **Lookbook & Gallery (`gallery.html`)**: Filterable real-client portfolio with interactive lightbox zoom and Before/After transformation comparison.
   * **About Us (`about.html`)**: Brand story, philosophy (*"Look Good. Feel Good. Always."*), master stylist director profiles (**Anand** & **Dildar**), and international brand partnerships (*L'Oréal Professionnel Paris*, *Kérastase*, *Olaplex*, *Dyson Pro*, *MAC*, *O.P.I.*).
-  * **Appointment Booking (`booking.html`)**: Interactive booking engine with live price/duration calculator, stylist selector, date & slot picker, receipt popup, and 1-click **WhatsApp reservation dispatch**.
-  * **Contact & Location (`contact.html`)**: Interactive Google Maps embed, direct call buttons, directions guide, and appointment inquiry form.
+  * **Appointment Booking (`booking.html`)**: Interactive booking engine with service selection, stylist selector, date & slot picker, and 1-click **WhatsApp reservation dispatch**.
+  * **Contact & Location (`contact.html`)**: Interactive Google Maps embed, direct call buttons, directions guide, and **1-click WhatsApp inquiry form routed directly to Anand (9820358282)**.
 
 * **Cinema & Smartphone Video Reels**:
   * Dual luxury gold-framed video player with auto-play (`autoplay muted loop playsinline`), sound toggle, play/pause controls, and live status badge.
