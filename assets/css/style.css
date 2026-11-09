@@ -572,7 +572,7 @@ button, input, select, textarea {
   align-items: center;
   text-align: center;
   text-decoration: none;
-  group: pointer;
+  cursor: pointer;
   transition: var(--transition);
 }
 
@@ -581,33 +581,72 @@ button, input, select, textarea {
 }
 
 .service-icon-ring {
-  width: 130px;
-  height: 130px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1.5px solid var(--border-gold);
+  border: 2px solid var(--border-gold);
   background: radial-gradient(circle at center, rgba(30, 34, 42, 0.9) 0%, rgba(15, 17, 21, 0.95) 100%);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5), inset 0 0 15px rgba(212, 175, 55, 0.06);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55), inset 0 0 15px rgba(212, 175, 55, 0.08);
   margin-bottom: 1.25rem;
+  overflow: hidden;
   transition: var(--transition);
 }
 
 .service-icon-ring::before {
   content: '';
   position: absolute;
-  inset: 5px;
+  inset: 4px;
   border-radius: 50%;
-  border: 1px dashed rgba(212, 175, 55, 0.35);
+  border: 1px dashed rgba(212, 175, 55, 0.45);
+  pointer-events: none;
+  z-index: 2;
+  transition: var(--transition);
+}
+
+.service-circle-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.5s ease;
+  filter: brightness(0.85) contrast(1.05);
+}
+
+.service-circle-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, transparent 35%, rgba(10, 11, 13, 0.75) 100%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 12px;
+  z-index: 3;
+  transition: background 0.35s ease;
+}
+
+.service-ring-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(10, 11, 13, 0.85);
+  border: 1px solid var(--border-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-light);
+  font-size: 0.82rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
   transition: var(--transition);
 }
 
 .service-circle-card:hover .service-icon-ring {
   border-color: var(--gold-light);
-  box-shadow: 0 0 25px rgba(212, 175, 55, 0.4), inset 0 0 20px rgba(212, 175, 55, 0.15);
-  background: radial-gradient(circle at center, rgba(42, 48, 60, 0.95) 0%, rgba(18, 21, 26, 1) 100%);
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.55), inset 0 0 15px rgba(212, 175, 55, 0.2);
 }
 
 .service-circle-card:hover .service-icon-ring::before {
@@ -615,21 +654,20 @@ button, input, select, textarea {
   transform: rotate(45deg);
 }
 
-.service-icon-ring svg,
-.service-icon-ring i {
-  width: 46px;
-  height: 46px;
-  color: var(--gold-light);
-  stroke: var(--gold-light);
-  fill: none;
-  transition: var(--transition);
+.service-circle-card:hover .service-circle-img {
+  transform: scale(1.15);
+  filter: brightness(1.05) contrast(1.1);
 }
 
-.service-circle-card:hover .service-icon-ring svg,
-.service-circle-card:hover .service-icon-ring i {
-  transform: scale(1.12);
-  color: #fff;
-  stroke: #fff;
+.service-circle-card:hover .service-circle-overlay {
+  background: radial-gradient(circle at center, transparent 45%, rgba(10, 11, 13, 0.5) 100%);
+}
+
+.service-circle-card:hover .service-ring-icon {
+  background: var(--gold-primary);
+  color: #0a0b0d;
+  border-color: #fff;
+  transform: translateY(-2px) scale(1.1);
 }
 
 .service-circle-title {
@@ -645,6 +683,25 @@ button, input, select, textarea {
 
 .service-circle-card:hover .service-circle-title {
   color: var(--gold-light);
+}
+
+.service-circle-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-top: 0.4rem;
+  opacity: 0.75;
+  transition: var(--transition);
+}
+
+.service-circle-card:hover .service-circle-cta {
+  opacity: 1;
+  color: #fff;
+  transform: translateX(3px);
 }
 
 /* ===================================================================

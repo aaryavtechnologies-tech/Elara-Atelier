@@ -18,7 +18,7 @@
     <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
   <link rel="apple-touch-icon" href="assets/images/elara-logo.png">
-  <link rel="stylesheet" href="assets/css/style.css?v=2.2">
+  <link rel="stylesheet" href="assets/css/style.css?v=3.0">
 </head>
 <body>
 
@@ -66,14 +66,27 @@
 
       <!-- Category Filter Tabs -->
       <div class="service-filter-nav">
-        <button class="filter-btn active" data-category="all">All Services</button>
+        <button class="filter-btn active" data-category="all">All Services (14)</button>
         <button class="filter-btn" data-category="hair-cuts">Hair Cut &amp; Styling</button>
         <button class="filter-btn" data-category="hair-color">Color &amp; Highlights</button>
-        <button class="filter-btn" data-category="treatments">Smoothening &amp; Spas</button>
-        <button class="filter-btn" data-category="skin-care">Facials &amp; Skin Care</button>
-        <button class="filter-btn" data-category="makeup">Bridal &amp; Makeup</button>
-        <button class="filter-btn" data-category="nails">Nail Extensions</button>
-        <button class="filter-btn" data-category="men">Men's Grooming</button>
+        <button class="filter-btn" data-category="treatments">Hair Treatments &amp; Smoothening</button>
+        <button class="filter-btn" data-category="skin-care">Skin Care Treatments</button>
+        <button class="filter-btn" data-category="facials">Facials &amp; Cleanups</button>
+        <button class="filter-btn" data-category="makeup">Makeup Services</button>
+        <button class="filter-btn" data-category="nails">Nail Care &amp; Extensions</button>
+        <button class="filter-btn" data-category="men">For Men &amp; Women</button>
+      </div>
+
+      <!-- Active Filter Banner (Shown when a category is selected) -->
+      <div id="filter-status-banner" style="display: none; margin-top: 1.75rem; background: rgba(212, 175, 55, 0.08); border: 1px solid var(--border-gold); border-radius: var(--radius-sm); padding: 0.85rem 1.4rem; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
+        <div style="font-size: 0.92rem; color: #fff; display: flex; align-items: center; gap: 8px;">
+          <i class="fa-solid fa-filter" style="color: var(--gold-light);"></i>
+          <span>Showing only: <strong id="filter-status-name" style="color: var(--gold-light); letter-spacing: 0.5px;">Hair Color & Highlights</strong></span>
+          <span id="filter-status-count" style="color: var(--text-muted); font-size: 0.84rem; background: rgba(0,0,0,0.4); padding: 2px 8px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">(2 services)</span>
+        </div>
+        <button onclick="applyServiceFilter('all')" class="btn btn-outline-gold btn-sm" style="padding: 0.4rem 1rem; font-size: 0.8rem; display: inline-flex; align-items: center; gap: 6px;">
+          <i class="fa-solid fa-rotate-left"></i> View All 14 Services
+        </button>
       </div>
     </div>
   </section>
@@ -107,7 +120,7 @@
         </div>
       </div>
 
-      <div class="service-menu-item" data-category="hair-cuts">
+      <div class="service-menu-item" data-category="hair-cuts men unisex">
         <div>
           <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 0.8rem;">
             <img src="assets/images/men-grooming.jpg" alt="Gentleman's Cut" style="width: 64px; height: 64px; border-radius: var(--radius-sm); object-fit: cover; border: 1.5px solid var(--border-gold); flex-shrink: 0;">
@@ -231,12 +244,17 @@
 
       <div class="service-menu-item" data-category="treatments">
         <div>
-          <div class="service-item-top">
-            <h3 class="service-item-title">Kérastase Fusio-Dose &amp; Moroccan Spa</h3>
-          </div>
-          <div class="service-item-meta">
-            <span><i class="fa-regular fa-clock"></i> 60 Mins</span>
-            <span><i class="fa-solid fa-spa"></i> Intensive Repair</span>
+          <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 0.8rem;">
+            <img src="assets/images/keratin-treatment.jpg" alt="Kérastase Spa" style="width: 64px; height: 64px; border-radius: var(--radius-sm); object-fit: cover; border: 1.5px solid var(--border-gold); flex-shrink: 0;">
+            <div style="flex: 1;">
+              <div class="service-item-top" style="margin-bottom: 0.3rem;">
+                <h3 class="service-item-title">Kérastase Fusio-Dose &amp; Moroccan Spa</h3>
+              </div>
+              <div class="service-item-meta" style="margin-bottom: 0;">
+                <span><i class="fa-regular fa-clock"></i> 60 Mins</span>
+                <span><i class="fa-solid fa-spa"></i> Intensive Repair</span>
+              </div>
+            </div>
           </div>
           <p class="service-item-desc">
             Customised concentrate and booster cocktail prepared fresh for your exact hair need (density, hydration, color radiance, or strength), followed by steam and acupressure massage.
@@ -249,14 +267,19 @@
       </div>
 
       <!-- Skin Care Treatments & Facials -->
-      <div class="service-menu-item" data-category="skin-care" id="skin-care">
+      <div class="service-menu-item" data-category="skin-care facials" id="skin-care">
         <div>
-          <div class="service-item-top">
-            <h3 class="service-item-title">HydraFacial 7-in-1 Skin Glow</h3>
-          </div>
-          <div class="service-item-meta">
-            <span><i class="fa-regular fa-clock"></i> 75 Mins</span>
-            <span><i class="fa-solid fa-shield-halved"></i> Deep Exfoliation</span>
+          <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 0.8rem;">
+            <img src="assets/images/facial-treatment.jpg" alt="HydraFacial Skin Glow" style="width: 64px; height: 64px; border-radius: var(--radius-sm); object-fit: cover; border: 1.5px solid var(--border-gold); flex-shrink: 0;">
+            <div style="flex: 1;">
+              <div class="service-item-top" style="margin-bottom: 0.3rem;">
+                <h3 class="service-item-title">HydraFacial 7-in-1 Skin Glow</h3>
+              </div>
+              <div class="service-item-meta" style="margin-bottom: 0;">
+                <span><i class="fa-regular fa-clock"></i> 75 Mins</span>
+                <span><i class="fa-solid fa-shield-halved"></i> Deep Exfoliation</span>
+              </div>
+            </div>
           </div>
           <p class="service-item-desc">
             Medical-grade vortex vacuum suction extraction, ultrasonic blackhead clearing, RF skin tightening, cold hammer pore shrink, and hyaluronic acid nutrient infusion.
@@ -268,14 +291,19 @@
         </div>
       </div>
 
-      <div class="service-menu-item" data-category="skin-care" id="facials">
+      <div class="service-menu-item" data-category="skin-care facials" id="facials">
         <div>
-          <div class="service-item-top">
-            <h3 class="service-item-title">24K Gold Luxury Illuminating Facial</h3>
-          </div>
-          <div class="service-item-meta">
-            <span><i class="fa-regular fa-clock"></i> 60 Mins</span>
-            <span><i class="fa-solid fa-crown"></i> Bridal Favorite</span>
+          <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 0.8rem;">
+            <img src="assets/images/gold-facial-treatment.jpg" alt="24K Gold Luxury Facial" style="width: 64px; height: 64px; border-radius: var(--radius-sm); object-fit: cover; border: 1.5px solid var(--border-gold); flex-shrink: 0;">
+            <div style="flex: 1;">
+              <div class="service-item-top" style="margin-bottom: 0.3rem;">
+                <h3 class="service-item-title">24K Gold Luxury Illuminating Facial</h3>
+              </div>
+              <div class="service-item-meta" style="margin-bottom: 0;">
+                <span><i class="fa-regular fa-clock"></i> 60 Mins</span>
+                <span><i class="fa-solid fa-crown"></i> Bridal Favorite</span>
+              </div>
+            </div>
           </div>
           <p class="service-item-desc">
             Deep cleansing, gold foil collagen mask, lymphatic drainage face lifting massage, and botanical brightening serums to restore elasticity and natural dewy warmth.
@@ -287,14 +315,19 @@
         </div>
       </div>
 
-      <div class="service-menu-item" data-category="skin-care">
+      <div class="service-menu-item" data-category="skin-care facials">
         <div>
-          <div class="service-item-top">
-            <h3 class="service-item-title">O3+ Tan Removal &amp; Express Cleanup</h3>
-          </div>
-          <div class="service-item-meta">
-            <span><i class="fa-regular fa-clock"></i> 45 Mins</span>
-            <span><i class="fa-solid fa-sun"></i> Sun Damage Reversal</span>
+          <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 0.8rem;">
+            <img src="assets/images/o3-cleanup-facial.jpg" alt="O3+ Tan Removal Cleanup" style="width: 64px; height: 64px; border-radius: var(--radius-sm); object-fit: cover; border: 1.5px solid var(--border-gold); flex-shrink: 0;">
+            <div style="flex: 1;">
+              <div class="service-item-top" style="margin-bottom: 0.3rem;">
+                <h3 class="service-item-title">O3+ Tan Removal &amp; Express Cleanup</h3>
+              </div>
+              <div class="service-item-meta" style="margin-bottom: 0;">
+                <span><i class="fa-regular fa-clock"></i> 45 Mins</span>
+                <span><i class="fa-solid fa-sun"></i> Sun Damage Reversal</span>
+              </div>
+            </div>
           </div>
           <p class="service-item-desc">
             Fast-acting botanical detan pack with fruit AHA acids, gentle exfoliation, steam, blackhead extractions, and soothing lavender hydration mist.
@@ -309,12 +342,17 @@
       <!-- Makeup & Bridal -->
       <div class="service-menu-item" data-category="makeup" id="makeup">
         <div>
-          <div class="service-item-top">
-            <h3 class="service-item-title">Bridal HD Couture Makeup &amp; Styling</h3>
-          </div>
-          <div class="service-item-meta">
-            <span><i class="fa-regular fa-clock"></i> 180 Mins</span>
-            <span><i class="fa-solid fa-star"></i> MAC, Dior, Huda Beauty</span>
+          <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 0.8rem;">
+            <img src="assets/images/bridal-makeup.jpg" alt="Bridal HD Makeup" style="width: 64px; height: 64px; border-radius: var(--radius-sm); object-fit: cover; border: 1.5px solid var(--border-gold); flex-shrink: 0;">
+            <div style="flex: 1;">
+              <div class="service-item-top" style="margin-bottom: 0.3rem;">
+                <h3 class="service-item-title">Bridal HD Couture Makeup &amp; Styling</h3>
+              </div>
+              <div class="service-item-meta" style="margin-bottom: 0;">
+                <span><i class="fa-regular fa-clock"></i> 180 Mins</span>
+                <span><i class="fa-solid fa-star"></i> MAC, Dior, Huda Beauty</span>
+              </div>
+            </div>
           </div>
           <p class="service-item-desc">
             Exquisite bridal glam crafted with waterproof HD cosmetics, eyelash extensions, customized bridal hairstyle with fresh floral/jewelry placement, and expert saree/lehenga draping.
@@ -328,12 +366,17 @@
 
       <div class="service-menu-item" data-category="makeup">
         <div>
-          <div class="service-item-top">
-            <h3 class="service-item-title">Cocktail &amp; Party Glam Makeup</h3>
-          </div>
-          <div class="service-item-meta">
-            <span><i class="fa-regular fa-clock"></i> 75 Mins</span>
-            <span><i class="fa-solid fa-champagne-glasses"></i> Camera Ready</span>
+          <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 0.8rem;">
+            <img src="assets/images/makeup-art.jpg" alt="Cocktail & Party Glam" style="width: 64px; height: 64px; border-radius: var(--radius-sm); object-fit: cover; border: 1.5px solid var(--border-gold); flex-shrink: 0;">
+            <div style="flex: 1;">
+              <div class="service-item-top" style="margin-bottom: 0.3rem;">
+                <h3 class="service-item-title">Cocktail &amp; Party Glam Makeup</h3>
+              </div>
+              <div class="service-item-meta" style="margin-bottom: 0;">
+                <span><i class="fa-regular fa-clock"></i> 75 Mins</span>
+                <span><i class="fa-solid fa-champagne-glasses"></i> Camera Ready</span>
+              </div>
+            </div>
           </div>
           <p class="service-item-desc">
             Smokey eye, soft glam, or editorial party looks with sweat-proof airbrush setting, false lashes, contouring, and sleek Hollywood waves or textured updo.
@@ -348,12 +391,17 @@
       <!-- Nail Care & Extensions -->
       <div class="service-menu-item" data-category="nails" id="nails">
         <div>
-          <div class="service-item-top">
-            <h3 class="service-item-title">Gel / Acrylic Nail Extensions &amp; Art</h3>
-          </div>
-          <div class="service-item-meta">
-            <span><i class="fa-regular fa-clock"></i> 90 Mins</span>
-            <span><i class="fa-solid fa-hand"></i> Long-Lasting 4 Weeks</span>
+          <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 0.8rem;">
+            <img src="assets/images/nail-art.jpg" alt="Nail Extensions & Art" style="width: 64px; height: 64px; border-radius: var(--radius-sm); object-fit: cover; border: 1.5px solid var(--border-gold); flex-shrink: 0;">
+            <div style="flex: 1;">
+              <div class="service-item-top" style="margin-bottom: 0.3rem;">
+                <h3 class="service-item-title">Gel / Acrylic Nail Extensions &amp; Art</h3>
+              </div>
+              <div class="service-item-meta" style="margin-bottom: 0;">
+                <span><i class="fa-regular fa-clock"></i> 90 Mins</span>
+                <span><i class="fa-solid fa-hand"></i> Long-Lasting 4 Weeks</span>
+              </div>
+            </div>
           </div>
           <p class="service-item-desc">
             Full-set sculpted extensions, French tips, chrome shimmer, cat-eye effects, or bespoke nail art with O.P.I. and Bluesky gel formulas that resist chipping.
@@ -366,14 +414,19 @@
       </div>
 
       <!-- Men's Grooming Lounge -->
-      <div class="service-menu-item" data-category="men" id="unisex">
+      <div class="service-menu-item" data-category="men unisex" id="unisex">
         <div>
-          <div class="service-item-top">
-            <h3 class="service-item-title">Executive Men's Grooming Package</h3>
-          </div>
-          <div class="service-item-meta">
-            <span><i class="fa-regular fa-clock"></i> 75 Mins</span>
-            <span><i class="fa-solid fa-martini-glass"></i> Complete Grooming</span>
+          <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 0.8rem;">
+            <img src="assets/images/men-luxury-grooming.jpg" alt="Executive Men's Grooming" style="width: 64px; height: 64px; border-radius: var(--radius-sm); object-fit: cover; border: 1.5px solid var(--border-gold); flex-shrink: 0;">
+            <div style="flex: 1;">
+              <div class="service-item-top" style="margin-bottom: 0.3rem;">
+                <h3 class="service-item-title">Executive Men's Grooming Package</h3>
+              </div>
+              <div class="service-item-meta" style="margin-bottom: 0;">
+                <span><i class="fa-regular fa-clock"></i> 75 Mins</span>
+                <span><i class="fa-solid fa-martini-glass"></i> Complete Grooming</span>
+              </div>
+            </div>
           </div>
           <p class="service-item-desc">
             Gentleman's haircut, beard sculpt with straight razor line-up, charcoal detox facial cleanup, refreshing scalp spa massage, and neck/shoulder stress relief.
@@ -472,21 +525,156 @@
   </div>
 
   <!-- Scripts -->
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js?v=3.0"></script>
   <script>
-    // In-page filtering for services
-    document.querySelectorAll('.service-filter-nav .filter-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.service-filter-nav .filter-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const cat = btn.getAttribute('data-category');
-        document.querySelectorAll('.services-catalog-grid .service-menu-item').forEach(item => {
-          if (cat === 'all' || item.getAttribute('data-category') === cat) {
-            item.style.display = 'flex';
-          } else {
-            item.style.display = 'none';
-          }
+    // Comprehensive In-Page and Deep-Link Category Filtering
+    function applyServiceFilter(category, shouldScroll = false) {
+      if (!category) category = 'all';
+
+      // Category Alias Mapping
+      const catMap = {
+        'all': 'all',
+        'hair-cuts': 'hair-cuts',
+        'hair-cut': 'hair-cuts',
+        'haircuts': 'hair-cuts',
+        'haircut': 'hair-cuts',
+        'hair-styling': 'hair-cuts',
+        'hair-color': 'hair-color',
+        'color': 'hair-color',
+        'highlights': 'hair-color',
+        'hair-colour': 'hair-color',
+        'treatments': 'treatments',
+        'hair-treatments': 'treatments',
+        'smoothening': 'treatments',
+        'keratin': 'treatments',
+        'skin-care': 'skin-care',
+        'skin': 'skin-care',
+        'skincare': 'skin-care',
+        'facials': 'facials',
+        'facial': 'facials',
+        'cleanup': 'facials',
+        'cleanups': 'facials',
+        'makeup': 'makeup',
+        'bridal': 'makeup',
+        'bridal-makeup': 'makeup',
+        'nails': 'nails',
+        'nail': 'nails',
+        'nail-care': 'nails',
+        'men': 'men',
+        'unisex': 'men',
+        'mens': 'men'
+      };
+
+      const normalized = catMap[category.toLowerCase()] || category.toLowerCase();
+
+      // Highlight active button
+      const filterBtns = document.querySelectorAll('.service-filter-nav .filter-btn');
+      let activeBtn = null;
+
+      filterBtns.forEach(btn => {
+        const btnCat = btn.getAttribute('data-category');
+        if (btnCat === normalized) {
+          btn.classList.add('active');
+          activeBtn = btn;
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+
+      // Filter catalog items
+      const items = document.querySelectorAll('.services-catalog-grid .service-menu-item');
+      let visibleCount = 0;
+
+      items.forEach(item => {
+        const itemCategories = (item.getAttribute('data-category') || '').split(' ');
+        let isMatch = false;
+
+        if (normalized === 'all') {
+          isMatch = true;
+        } else if (itemCategories.includes(normalized)) {
+          isMatch = true;
+        } else if (normalized === 'skin-care' && (itemCategories.includes('skin-care') || itemCategories.includes('facials'))) {
+          isMatch = true;
+        } else if (normalized === 'facials' && (itemCategories.includes('facials') || itemCategories.includes('skin-care'))) {
+          isMatch = true;
+        } else if (normalized === 'men' && (itemCategories.includes('men') || itemCategories.includes('unisex'))) {
+          isMatch = true;
+        }
+
+        if (isMatch) {
+          item.style.display = 'flex';
+          visibleCount++;
+        } else {
+          item.style.display = 'none';
+        }
+      });
+
+      // Update banner
+      const banner = document.getElementById('filter-status-banner');
+      const nameSpan = document.getElementById('filter-status-name');
+      const countSpan = document.getElementById('filter-status-count');
+
+      if (banner && nameSpan && countSpan) {
+        if (normalized === 'all') {
+          banner.style.display = 'none';
+        } else {
+          banner.style.display = 'flex';
+          const label = activeBtn ? activeBtn.innerText.replace(/\(\d+\)/, '').trim() : normalized;
+          nameSpan.innerText = label;
+          countSpan.innerText = `(${visibleCount} service${visibleCount === 1 ? '' : 's'})`;
+        }
+      }
+
+      // Keep browser address bar in sync
+      if (window.history && window.history.replaceState) {
+        const newUrl = normalized === 'all'
+          ? window.location.pathname
+          : `${window.location.pathname}?category=${encodeURIComponent(normalized)}`;
+        window.history.replaceState({ category: normalized }, '', newUrl);
+      }
+
+      // Smooth scroll down to the filtered results if requested
+      if (shouldScroll) {
+        const target = document.getElementById('filter-status-banner') || document.getElementById('services-grid');
+        if (target) {
+          setTimeout(() => {
+            const rect = target.getBoundingClientRect();
+            const yOffset = -90;
+            const y = rect.top + window.pageYOffset + yOffset;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+          }, 150);
+        }
+      }
+    }
+
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      let requestedCat = urlParams.get('category');
+      
+      // Fallback to URL hash if ?category is absent
+      if (!requestedCat && window.location.hash) {
+        requestedCat = window.location.hash.replace('#', '');
+      }
+
+      if (requestedCat) {
+        applyServiceFilter(requestedCat, true);
+      } else {
+        applyServiceFilter('all', false);
+      }
+
+      // Event listener for tab buttons
+      document.querySelectorAll('.service-filter-nav .filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const cat = btn.getAttribute('data-category');
+          applyServiceFilter(cat, false);
         });
+      });
+
+      // Handle browser back/forward history navigation
+      window.addEventListener('popstate', (e) => {
+        const params = new URLSearchParams(window.location.search);
+        applyServiceFilter(params.get('category') || 'all', false);
       });
     });
   </script>
