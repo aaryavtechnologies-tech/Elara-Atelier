@@ -66,7 +66,7 @@
 
       <!-- Category Filter Tabs -->
       <div class="service-filter-nav">
-        <button class="filter-btn active" data-category="all">All Services (14)</button>
+        <button class="filter-btn active" data-category="all">All Services (16)</button>
         <button class="filter-btn" data-category="hair-cuts">Hair Cut &amp; Styling</button>
         <button class="filter-btn" data-category="hair-color">Color &amp; Highlights</button>
         <button class="filter-btn" data-category="treatments">Hair Treatments &amp; Smoothening</button>
@@ -85,7 +85,7 @@
           <span id="filter-status-count" style="color: var(--text-muted); font-size: 0.84rem; background: rgba(0,0,0,0.4); padding: 2px 8px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">(2 services)</span>
         </div>
         <button onclick="applyServiceFilter('all')" class="btn btn-outline-gold btn-sm" style="padding: 0.4rem 1rem; font-size: 0.8rem; display: inline-flex; align-items: center; gap: 6px;">
-          <i class="fa-solid fa-rotate-left"></i> View All 14 Services
+          <i class="fa-solid fa-rotate-left"></i> View All 16 Services
         </button>
       </div>
     </div>
@@ -340,37 +340,64 @@
       </div>
 
       <!-- Makeup & Bridal -->
-      <div class="service-menu-item" data-category="makeup" id="makeup">
+      <!-- 1. Royal Indian Bridal HD Couture -->
+      <div class="service-menu-item" data-category="makeup bridal" id="makeup">
         <div>
           <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 0.8rem;">
-            <img src="assets/images/elara-real-bride-makeup-cover.jpg" alt="Bridal HD Makeup" style="width: 64px; height: 64px; border-radius: var(--radius-sm); object-fit: cover; border: 1.5px solid var(--border-gold); flex-shrink: 0;">
+            <img src="assets/images/elara-bridal-red-lehenga-thumb.jpg" alt="Royal Indian Bridal HD Couture" style="width: 64px; height: 64px; border-radius: var(--radius-sm); object-fit: cover; border: 1.5px solid var(--border-gold); flex-shrink: 0;">
             <div style="flex: 1;">
               <div class="service-item-top" style="margin-bottom: 0.3rem;">
-                <h3 class="service-item-title">Bridal HD Couture Makeup &amp; Styling</h3>
+                <h3 class="service-item-title">Royal Indian Bridal HD Couture &amp; Draping</h3>
               </div>
               <div class="service-item-meta" style="margin-bottom: 0;">
                 <span><i class="fa-regular fa-clock"></i> 180 Mins</span>
-                <span><i class="fa-solid fa-star"></i> MAC, Dior, Huda Beauty</span>
+                <span><i class="fa-solid fa-crown"></i> Kryolan &amp; MAC HD</span>
               </div>
             </div>
           </div>
           <p class="service-item-desc">
-            Exquisite bridal glam crafted with waterproof HD cosmetics, eyelash extensions, customized bridal hairstyle with fresh floral/jewelry placement, and expert saree/lehenga draping.
+            Opulent traditional Indian bridal artistry for wedding ceremonies and sangeet. Includes 24-hour waterproof HD base, maang tikka / matha patti setting, floral bridal bun architecture, and expert saree or lehenga pleating.
           </p>
         </div>
         <div class="service-item-footer">
-          <span style="font-size: 0.82rem; color: var(--gold-light);"><i class="fa-solid fa-circle-check"></i> Full Bridal Suite Package</span>
-          <a href="booking.html?service=Bridal+HD+Makeup" class="btn btn-blush btn-sm">Book This</a>
+          <span style="font-size: 0.82rem; color: var(--gold-light);"><i class="fa-solid fa-circle-check"></i> Complete Bridal Suite &amp; Draping</span>
+          <a href="booking.html?service=Royal+Indian+Bridal+HD" class="btn btn-blush btn-sm">Book This</a>
         </div>
       </div>
 
+      <!-- 2. Christian & Western Bridal Styling -->
+      <div class="service-menu-item" data-category="makeup bridal">
+        <div>
+          <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 0.8rem;">
+            <img src="assets/images/elara-bridal-christian-thumb.jpg" alt="Christian & Contemporary Bridal" style="width: 64px; height: 64px; border-radius: var(--radius-sm); object-fit: cover; border: 1.5px solid var(--border-gold); flex-shrink: 0;">
+            <div style="flex: 1;">
+              <div class="service-item-top" style="margin-bottom: 0.3rem;">
+                <h3 class="service-item-title">Christian &amp; Western White Gown Bridal Styling</h3>
+              </div>
+              <div class="service-item-meta" style="margin-bottom: 0;">
+                <span><i class="fa-regular fa-clock"></i> 150 Mins</span>
+                <span><i class="fa-solid fa-star"></i> Dior / Huda Beauty</span>
+              </div>
+            </div>
+          </div>
+          <p class="service-item-desc">
+            Radiant, luminous bridal glam curated for white gown ceremonies and contemporary church weddings. Features dewy porcelain finish, soft smokey eye definition, bridal tiara and veil pinning, and romantic cascading Hollywood curls.
+          </p>
+        </div>
+        <div class="service-item-footer">
+          <span style="font-size: 0.82rem; color: var(--gold-light);"><i class="fa-solid fa-circle-check"></i> Tiara &amp; Veil Setting Included</span>
+          <a href="booking.html?service=Christian+Bridal+Styling" class="btn btn-blush btn-sm">Book This</a>
+        </div>
+      </div>
+
+      <!-- 3. Red-Carpet Cocktail & Reception Glam -->
       <div class="service-menu-item" data-category="makeup">
         <div>
           <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 0.8rem;">
-            <img src="assets/images/makeup-art.jpg" alt="Cocktail & Party Glam" style="width: 64px; height: 64px; border-radius: var(--radius-sm); object-fit: cover; border: 1.5px solid var(--border-gold); flex-shrink: 0;">
+            <img src="assets/images/elara-party-glam-pooja-thumb.jpg" alt="Red-Carpet Cocktail Glam" style="width: 64px; height: 64px; border-radius: var(--radius-sm); object-fit: cover; border: 1.5px solid var(--border-gold); flex-shrink: 0;">
             <div style="flex: 1;">
               <div class="service-item-top" style="margin-bottom: 0.3rem;">
-                <h3 class="service-item-title">Cocktail &amp; Party Glam Makeup</h3>
+                <h3 class="service-item-title">Red-Carpet Cocktail &amp; Reception Glam</h3>
               </div>
               <div class="service-item-meta" style="margin-bottom: 0;">
                 <span><i class="fa-regular fa-clock"></i> 75 Mins</span>
@@ -379,12 +406,37 @@
             </div>
           </div>
           <p class="service-item-desc">
-            Smokey eye, soft glam, or editorial party looks with sweat-proof airbrush setting, false lashes, contouring, and sleek Hollywood waves or textured updo.
+            High-impact evening glam as curated for Bollywood celebrities and galas. Sweat-proof airbrush setting, customized lashes, cheekbone contouring, bold lips, and sleek textured Hollywood waves.
           </p>
         </div>
         <div class="service-item-footer">
           <span style="font-size: 0.82rem; color: var(--gold-light);"><i class="fa-solid fa-circle-check"></i> Lashes &amp; Hairstyling Included</span>
           <a href="booking.html?service=Party+Glam+Makeup" class="btn btn-blush btn-sm">Book This</a>
+        </div>
+      </div>
+
+      <!-- 4. Celebrity & High-Fashion Editorial Styling -->
+      <div class="service-menu-item" data-category="makeup hair-cuts">
+        <div>
+          <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 0.8rem;">
+            <img src="assets/images/elara-celebrity-simran-mundi.jpg" alt="High-Fashion Editorial Styling" style="width: 64px; height: 64px; border-radius: var(--radius-sm); object-fit: cover; border: 1.5px solid var(--border-gold); flex-shrink: 0;">
+            <div style="flex: 1;">
+              <div class="service-item-top" style="margin-bottom: 0.3rem;">
+                <h3 class="service-item-title">Celebrity Editorial &amp; High-Fashion Styling</h3>
+              </div>
+              <div class="service-item-meta" style="margin-bottom: 0;">
+                <span><i class="fa-regular fa-clock"></i> 90 Mins</span>
+                <span><i class="fa-solid fa-camera"></i> Master Stylist Anand</span>
+              </div>
+            </div>
+          </div>
+          <p class="service-item-desc">
+            Couture editorial hair architecture and bespoke makeup designed for fashion shoots, pre-wedding films, and red-carpet appearances. Direct masterclass consultation with Master Director Anand.
+          </p>
+        </div>
+        <div class="service-item-footer">
+          <span style="font-size: 0.82rem; color: var(--gold-light);"><i class="fa-solid fa-circle-check"></i> Celebrity Stylist Anand Direct</span>
+          <a href="booking.html?service=Editorial+Styling" class="btn btn-blush btn-sm">Book This</a>
         </div>
       </div>
 
@@ -438,6 +490,55 @@
         </div>
       </div>
 
+    </div>
+
+    <!-- Celebrity Spotlight Banner -->
+    <div style="margin: 4rem 0 2rem; background: radial-gradient(circle at top, rgba(35, 40, 50, 0.95), rgba(15, 17, 21, 0.98)); border: 1.5px solid var(--border-gold); border-radius: var(--radius-md); padding: 2.5rem 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.6);">
+      <div class="text-center" style="margin-bottom: 2rem;">
+        <span class="section-tagline" style="color: var(--gold-light); font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase;"><i class="fa-solid fa-crown" style="color: var(--gold-primary); margin-right: 6px;"></i> Trusted by Icons</span>
+        <h2 class="serif" style="font-size: 1.85rem; color: #fff; margin-top: 0.4rem; margin-bottom: 0.5rem;">Celebrity Stylist Portfolio</h2>
+        <p style="color: var(--text-muted); font-size: 0.92rem; max-width: 650px; margin: 0 auto;">
+          Master Director <strong>Anand (Sabanand Paira)</strong> brings decades of Bollywood and international runway expertise directly to Elara Atelier in Vile Parle East.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.25rem;">
+        <div style="text-align: center; background: rgba(0,0,0,0.3); border: 1px solid rgba(212,175,55,0.25); border-radius: var(--radius-sm); padding: 1rem; transition: var(--transition);">
+          <img src="assets/images/elara-celebrity-aishwarya-rai.jpg" alt="Aishwarya Rai Bachchan styled by Anand" style="width: 100%; height: 160px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 0.75rem; border: 1px solid var(--border-gold);">
+          <h4 style="font-size: 0.95rem; color: #fff; margin-bottom: 0.2rem;">Aishwarya Rai</h4>
+          <span style="font-size: 0.75rem; color: var(--gold-light); text-transform: uppercase; letter-spacing: 0.5px;">Global Bollywood Icon</span>
+        </div>
+
+        <div style="text-align: center; background: rgba(0,0,0,0.3); border: 1px solid rgba(212,175,55,0.25); border-radius: var(--radius-sm); padding: 1rem; transition: var(--transition);">
+          <img src="assets/images/elara-celebrity-ms-dhoni.jpg" alt="MS Dhoni styled by Anand" style="width: 100%; height: 160px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 0.75rem; border: 1px solid var(--border-gold);">
+          <h4 style="font-size: 0.95rem; color: #fff; margin-bottom: 0.2rem;">MS Dhoni</h4>
+          <span style="font-size: 0.75rem; color: var(--gold-light); text-transform: uppercase; letter-spacing: 0.5px;">Indian Cricket Legend</span>
+        </div>
+
+        <div style="text-align: center; background: rgba(0,0,0,0.3); border: 1px solid rgba(212,175,55,0.25); border-radius: var(--radius-sm); padding: 1rem; transition: var(--transition);">
+          <img src="assets/images/elara-celebrity-sania-mirza.jpg" alt="Sania Mirza styled by Anand" style="width: 100%; height: 160px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 0.75rem; border: 1px solid var(--border-gold);">
+          <h4 style="font-size: 0.95rem; color: #fff; margin-bottom: 0.2rem;">Sania Mirza</h4>
+          <span style="font-size: 0.75rem; color: var(--gold-light); text-transform: uppercase; letter-spacing: 0.5px;">International Tennis Star</span>
+        </div>
+
+        <div style="text-align: center; background: rgba(0,0,0,0.3); border: 1px solid rgba(212,175,55,0.25); border-radius: var(--radius-sm); padding: 1rem; transition: var(--transition);">
+          <img src="assets/images/elara-celebrity-pooja-batra-glam.jpg" alt="Pooja Batra styled by Anand" style="width: 100%; height: 160px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 0.75rem; border: 1px solid var(--border-gold);">
+          <h4 style="font-size: 0.95rem; color: #fff; margin-bottom: 0.2rem;">Pooja Batra</h4>
+          <span style="font-size: 0.75rem; color: var(--gold-light); text-transform: uppercase; letter-spacing: 0.5px;">Miss India / Bollywood Star</span>
+        </div>
+
+        <div style="text-align: center; background: rgba(0,0,0,0.3); border: 1px solid rgba(212,175,55,0.25); border-radius: var(--radius-sm); padding: 1rem; transition: var(--transition);">
+          <img src="assets/images/elara-celebrity-simran-mundi.jpg" alt="Simran Kaur Mundi styled by Anand" style="width: 100%; height: 160px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 0.75rem; border: 1px solid var(--border-gold);">
+          <h4 style="font-size: 0.95rem; color: #fff; margin-bottom: 0.2rem;">Simran K. Mundi</h4>
+          <span style="font-size: 0.75rem; color: var(--gold-light); text-transform: uppercase; letter-spacing: 0.5px;">Miss India Universe</span>
+        </div>
+
+        <div style="text-align: center; background: rgba(0,0,0,0.3); border: 1px solid rgba(212,175,55,0.25); border-radius: var(--radius-sm); padding: 1rem; transition: var(--transition);">
+          <img src="assets/images/elara-celebrity-alka-yagnik.jpg" alt="Alka Yagnik styled by Anand" style="width: 100%; height: 160px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 0.75rem; border: 1px solid var(--border-gold);">
+          <h4 style="font-size: 0.95rem; color: #fff; margin-bottom: 0.2rem;">Alka Yagnik</h4>
+          <span style="font-size: 0.75rem; color: var(--gold-light); text-transform: uppercase; letter-spacing: 0.5px;">Legendary Playback Icon</span>
+        </div>
+      </div>
     </div>
 
     <!-- Custom Consultation Callout -->
